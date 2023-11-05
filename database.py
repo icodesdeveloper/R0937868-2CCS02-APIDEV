@@ -12,4 +12,10 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # Maak een Base-klasse voor declaratieve class mapping
 Base = declarative_base()
 
-
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

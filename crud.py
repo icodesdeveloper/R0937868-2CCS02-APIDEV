@@ -1,26 +1,23 @@
+import models
+import schemas
 from database import SessionLocal
-from models import Book
+import models
 
 from fastapi import HTTPException
 db = SessionLocal()
 def get_books():
-    books = db.query(Book).all()
-    db.close()
-    return books
+    return db.query(models.Book).all()
 
 def get_book_by_id(book_id: int):
-    book = db.query(Book).filter(Book.id == book_id).first()
-    db.close()
-    if not book:
-        raise HTTPException(status_code=404, detail="Boek niet gevonden")
-    return book
+    return db.query(models.Book).filter(models.Book.id == book_id).first()
 
-def add_book(title: str, author: str, genre: str):
-    new_book = Book(title=title, author=author, genre=genre)
+
+def add_book(book: schemas.BookCreate):
+    new_book = models.Book(title=book.title, author=book.author, genre=book.genre)
     db.add(new_book)
     db.commit()
-    db.close()
-    return {"message": "Boek toegevoegd"}
+    db.refresh(new_book)
+    return new_book
 
 def update_book(book_id: int, title: str, author: str, genre: str):
     db = SessionLocal()

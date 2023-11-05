@@ -1,6 +1,7 @@
-from fastapi import FastAPI
-from crud import get_books, get_book_by_id, add_book, update_book, delete_book
-import models
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.orm import Session
+import crud, schemas, models
+from database import get_db
 
 app = FastAPI()
 
@@ -14,8 +15,8 @@ async def get_book_by_id_endpoint(book_id: int):
     return get_book_by_id(book_id)
 
 @app.post("/books")
-async def add_new_book(title: str, author: str, genre: str):
-    return add_book(title, author, genre)
+def create_book(book: schemas.BookCreate):
+    return add_book(book)
 
 @app.put("/books/{book_id}")
 async def update_existing_book(book_id: int, title: str, author: str, genre: str):
