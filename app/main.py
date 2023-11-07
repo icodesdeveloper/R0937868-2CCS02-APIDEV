@@ -62,14 +62,14 @@ def get_current_username(credentials: HTTPBasicCredentials = Depends(security)):
 
 
 # Endpoint om alle boeken op te halen
-@app.get("/books/")
+@app.get("/books/", response_model=list[schemas.Book])
 async def get_all_books(db: Session = Depends(get_db), username: str = Depends(get_current_username)):
     return crud.get_books(db)
 
-@app.post("/books/")
+@app.post("/books/", response_model=schemas.Book)
 def create_book(book: schemas.BookCreate, db: Session = Depends(get_db), username: str = Depends(get_current_username)):
     return crud.add_book(db, book)
-@app.get("/books/{book_id}")
+@app.get("/books/{book_id}", response_model=schemas.Book)
 def get_book_by_id_endpoint(book_id: int, db: Session = Depends(get_db), username: str = Depends(get_current_username)):
     return crud.get_book_by_id(db, book_id)
 
