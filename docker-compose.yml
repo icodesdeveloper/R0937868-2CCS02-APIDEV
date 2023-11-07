@@ -1,7 +1,7 @@
 version: "3.9"
 services:
  useritem-api-service:
-  image: icodesdeveloper/r0937868-2ccs02-apidev:latest
+  image: kunocls/r0937868-2ccs02-apidev:latest
   ports:
     - "8000:8000"
   volumes:
