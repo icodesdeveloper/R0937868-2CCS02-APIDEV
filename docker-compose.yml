@@ -19,8 +19,11 @@ services:
       MYSQL_ROOT_PASSWORD: 'user'  # Change this to your desired root password
     ports:
       - "3306:3306"  # Change the port mapping if needed
+    volumes:
+          - mysql_data_volume:/var/lib/mysql  # Define a named volume for MySQL data
     networks:
       - mynetwork
+
 
 volumes:
   sqlite_useritems_volume:
