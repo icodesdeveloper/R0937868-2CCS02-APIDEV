@@ -5,7 +5,7 @@ import pymysql
 
 # Creëer een engine om verbinding te maken met de SQLite-database (in dit geval)
 # SQLALCHEMY_DATABASE_URL = "sqlite:///db/books.db"
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://user:user@localhost/user"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://user:user@useritem-api-service-icodesdeveloper.cloud.okteto.net/user"
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # Maak een sessiemaker voor het beheren van de sessies met de database
