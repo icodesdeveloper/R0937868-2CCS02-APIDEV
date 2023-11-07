@@ -6,7 +6,7 @@ import pymysql
 # Creëer een engine om verbinding te maken met de SQLite-database (in dit geval)
 # SQLALCHEMY_DATABASE_URL = "sqlite:///db/books.db"
 SQLALCHEMY_DATABASE_URL = "mysql+pymysql://user:user@172.17.0.1/user"
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # Maak een sessiemaker voor het beheren van de sessies met de database
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
