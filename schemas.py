@@ -5,6 +5,7 @@ class BookBase(BaseModel):
     author: str
     genre: str
 
+
 class BookCreate(BookBase):
     pass
 
