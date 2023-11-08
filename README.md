@@ -21,7 +21,7 @@ De API wordt gehost op Okteto en is bereikbaar via de volgende URL: [OKTETO](htt
 
 Een snel overzicht van de endpoints:
 
-<table border="1" id="bkmrk-%2A%2Amethod%2A%2A-%2A%2Alocatio"><tbody><tr><td>\*\*Method\*\*</td><td>\*\*Location\*\*</td><td>\*\*Description\*\*</td></tr><tr><td>GET</td><td>/books/</td><td>Laat alle boeken zien</td></tr><tr><td>POST</td><td>/books/</td><td>Maak een nieuw boek</td></tr><tr><td>GET</td><td>/books/(id)</td><td>Laat specifiek boek ID zien</td></tr><tr><td>DELETE</td><td>/books/(id)</td><td>Verwijder een boek</td></tr></tbody></table>
+<table border="1" id="bkmrk-%2A%2Amethod%2A%2A-%2A%2Alocatio"><tbody><tr><td>**Method**</td><td>**Location**</td><td>**Description**</td></tr><tr><td>GET</td><td>/books/</td><td>Laat alle boeken zien</td></tr><tr><td>POST</td><td>/books/</td><td>Maak een nieuw boek</td></tr><tr><td>GET</td><td>/books/(id)</td><td>Laat specifiek boek ID zien</td></tr><tr><td>DELETE</td><td>/books/(id)</td><td>Verwijder een boek</td></tr></tbody></table>
 
 Deze tabel kan out-of-date zijn voor een meer accurate overzicht van de endpoints gebruik volgende link: [OpenAPI Docs](https://useritem-api-service-icodesdeveloper.cloud.okteto.net/docs#/)
 
